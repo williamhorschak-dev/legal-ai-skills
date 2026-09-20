@@ -8,7 +8,7 @@ body:
         William Horschak is not a licensed attorney and does not provide individual
         legal advice through this project. Do not post case files, personal details,
         privileged material, or requests for advice about your matter.
-        Read the [legal notice](https://github.com/williamhorschak-dev/legal-ai-skills/blob/main/LEGAL_NOTICE.md).
+        Read the [legal notice](https://github.com/williamhorschak-dev/wisconsin-legal-ai-skills/blob/main/LEGAL_NOTICE.md).
   - type: checkboxes
     id: scope
     attributes:

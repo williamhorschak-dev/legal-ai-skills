@@ -1,4 +1,4 @@
-# Legal AI Skills by William Horschak
+# Wisconsin Legal AI Skills
 
 > **General information and software tools; no legal services.** William Horschak
 > is **not a licensed attorney**. This project does not provide legal advice or
@@ -16,7 +16,7 @@ Each folder contains a `SKILL.md` entrypoint, focused references, and any script
 or templates it needs. The legal text has one maintained source; vendor-specific
 metadata does not create a second version of the law.
 
-Repository: [williamhorschak-dev/legal-ai-skills](https://github.com/williamhorschak-dev/legal-ai-skills).
+Repository: [williamhorschak-dev/wisconsin-legal-ai-skills](https://github.com/williamhorschak-dev/wisconsin-legal-ai-skills).
 
 ## Skills
 
