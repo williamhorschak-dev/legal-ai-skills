@@ -1,0 +1,73 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Motion to Compel Discovery",
+  "body": [
+    {
+      "type": "p",
+      "text": "Plaintiff [NAME], pro se, moves the Court for an Order compelling Defendant [NAME] (“[SHORT]”) to serve complete responses to [Interrogatories Nos. __ and Requests for Production Nos. __], and for Plaintiff's reasonable expenses incurred in making this motion, pursuant to Wis. Stat. §§ 804.09 and 804.12(1), with sanctions available for noncompliance under Wis. Stat. § 804.12(2)."
+    },
+    {
+      "type": "p",
+      "text": "Plaintiff conferred with [opposing counsel] in good faith in an effort to obtain the discovery without court action. [Describe: date, method, what was asked, what was answered.] The dispute could not be resolved. Wisconsin imposes no general meet-and-confer prerequisite, but the record of conferral bears directly on whether Defendant's position was substantially justified under Wis. Stat. § 804.12(1)(c)."
+    },
+    {
+      "type": "h1",
+      "text": "Argument"
+    },
+    {
+      "type": "h2",
+      "text": "I. [Request No. __]: Defendant's response is an evasive or incomplete answer and is therefore a failure to answer under Wis. Stat. § 804.12(1)(b)."
+    },
+    {
+      "type": "quote",
+      "text": "REQUEST NO. __: [the request as served, verbatim]"
+    },
+    {
+      "type": "quote",
+      "text": "RESPONSE: [the response as served, verbatim]"
+    },
+    {
+      "type": "p",
+      "text": "[Explain the actual defect: an evasive or incomplete answer under § 804.12(1)(b), an unjustified specific objection under §§ 804.08(1)(b) or 804.09(2)(b)1, or a total failure to serve answers or objections under § 804.12(4). A timely specific objection may take the place of the objected-to answer; it does not automatically require a protective-order motion. Explain relevance and proportionality under § 804.01(2)(a), then address each objection on its merits.]"
+    },
+    {
+      "type": "h2",
+      "text": "II. [Next request. Same structure. One heading per request, not one heading for all of them.]"
+    },
+    {
+      "type": "p",
+      "text": "[Argument.]"
+    },
+    {
+      "type": "h1",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "text": "WHEREFORE, Plaintiff respectfully requests that the Court enter an order (1) compelling Defendant to serve complete responses to [requests] on or before [DATE]; (2) requiring a privilege log identifying any material withheld on a claim of privilege, with sufficient detail to permit the claim to be tested; (3) requiring a sworn certification describing the search conducted as to any request Defendant answers with “no documents”; (4) awarding Plaintiff his reasonable expenses incurred in making this motion under Wis. Stat. § 804.12(1)(c); and (5) granting such other and further relief as the Court deems just and proper."
+    }
+  ],
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  }
+}

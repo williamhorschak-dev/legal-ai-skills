@@ -1,0 +1,45 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Motion to Enlarge Time to [ACT]",
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  },
+  "body": [
+    {
+      "type": "p",
+      "text": "Plaintiff [NAME], pro se, moves the Court under Wis. Stat. § 801.15(2)(a) to enlarge the time to [act]. This motion is filed [before the period expires, so the standard is cause shown / after the period expired, so the standard is excusable neglect]."
+    },
+    {
+      "type": "p",
+      "text": "[The facts establishing cause or excusable neglect. Be concrete: what happened, on what dates, and why it prevented timely action.]"
+    },
+    {
+      "type": "p",
+      "text": "[Whether the opposing party objects. If it does not, say so, a non-objection materially shortens the analysis.]"
+    },
+    {
+      "type": "p",
+      "text": "WHEREFORE, Plaintiff respectfully requests that the Court enter an order enlarging Plaintiff's time to [act] to and including [DATE], and granting such other and further relief as the Court deems just and proper."
+    }
+  ]
+}

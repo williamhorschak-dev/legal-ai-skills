@@ -1,0 +1,69 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Brief in Opposition to Defendant's Motion to [RELIEF]",
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  },
+  "body": [
+    {
+      "type": "h1",
+      "text": "Introduction"
+    },
+    {
+      "type": "p",
+      "text": "Plaintiff [NAME], pro se, submits this Brief in Opposition to [the motion]. Plaintiff respectfully requests that the Court deny [the relief sought]."
+    },
+    {
+      "type": "p",
+      "text": "[The single strongest reason the motion fails, stated in two or three sentences, with the controlling authority. Case names take the builder's italic markup: *Wis. Dep't of Workforce Dev. v. Wis. Labor & Indus. Rev. Comm'n*, 2016 WI App 21, ¶31 n.23, 367 Wis. 2d 609, 877 N.W.2d 620.]"
+    },
+    {
+      "type": "h1",
+      "text": "Argument"
+    },
+    {
+      "type": "h2",
+      "text": "I. [Proposition: why the movant cannot satisfy the governing standard.]"
+    },
+    {
+      "type": "p",
+      "text": "[Argument.]"
+    },
+    {
+      "type": "h2",
+      "text": "II. [Proposition: independent ground for denial.]"
+    },
+    {
+      "type": "p",
+      "text": "[Argument.]"
+    },
+    {
+      "type": "h1",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "text": "WHEREFORE, Plaintiff respectfully requests that the Court enter an order denying [the motion], and granting such other and further relief as the Court deems just and proper."
+    }
+  ]
+}

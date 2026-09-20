@@ -1,0 +1,37 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": true,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "signature": null,
+  "title": "Order Granting Plaintiff's Motion to [RELIEF]",
+  "body": [
+    {
+      "type": "p",
+      "text": "The Court has reviewed Plaintiff [NAME]'s Motion to [RELIEF] (Doc. __). The Court finds [good cause shown / excusable neglect / that the motion is well taken]."
+    },
+    {
+      "type": "p",
+      "text": "IT IS ORDERED that:"
+    },
+    {
+      "type": "ordered",
+      "text": "[First ordered item. Docketable as written, real dates, not “promptly.”]"
+    },
+    {
+      "type": "ordered",
+      "text": "[Second ordered item.]"
+    }
+  ]
+}

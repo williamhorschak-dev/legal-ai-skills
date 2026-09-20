@@ -1,0 +1,49 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Declaration of [NAME] in Support of Plaintiff's Motion to [RELIEF]",
+  "body": [
+    {
+      "type": "p",
+      "text": "Pursuant to Wis. Stat. § 887.015, I declare the following to be true under penalty of false swearing under the law of Wisconsin."
+    },
+    {
+      "type": "num",
+      "text": "1. I am [NAME AND RELATION TO THE MATTER] and make this declaration on personal knowledge."
+    },
+    {
+      "type": "num",
+      "text": "2. [One evidentiary fact per numbered paragraph. Facts only. No argument, no legal conclusions, nothing you could not testify to.]"
+    },
+    {
+      "type": "num",
+      "text": "3. Attached as Exhibit A is a true and correct copy of [document], which I [received from / sent to / obtained from] [source] on [date]."
+    },
+    {
+      "type": "p",
+      "text": "Signed on the ____ day of __________, [YEAR], at [CITY], [STATE OR COUNTRY]."
+    }
+  ],
+  "signature": {
+    "style": "pro_se",
+    "date": null,
+    "name": "[NAME]",
+    "role": "[DECLARANT'S ACTUAL ROLE]",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  }
+}

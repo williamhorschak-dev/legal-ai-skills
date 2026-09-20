@@ -1,0 +1,107 @@
+# Legal AI Skills by William Horschak
+
+Reusable workflows for Wisconsin legal research, citation verification, and legal
+drafting. Originally developed for Claude, the same skill folders now support
+Claude Code, Codex, other Agent Skills hosts, and selective prompt use in ChatGPT
+or other LLM applications. Tool availability determines what each host can do.
+
+Each folder contains a `SKILL.md` entrypoint, focused references, and any scripts
+or templates it needs. The legal text has one maintained source; vendor-specific
+metadata does not create a second version of the law.
+
+Repository: [williamhorschak-dev/legal-ai-skills](https://github.com/williamhorschak-dev/legal-ai-skills).
+
+## Skills
+
+| Skill | Purpose | Included tools |
+|---|---|---|
+| [cite-check](skills/cite-check/SKILL.md) | Inventory citation uses; check quotations, pincites, treatment, proposition support, form, and record references against actual sources. | A hash-bound evidence log, text-quotation matcher, and report generator. A report records documented checks; it cannot perform legal judgment or a citator search itself. |
+| [wisconsin-legal-writing](skills/wisconsin-legal-writing/SKILL.md) | Draft and review Wisconsin filings, correspondence, discovery responses, and research memoranda using the actual court, posture, and signer. | A **circuit-court** DOCX builder, 11 JSON specifications, and 14 Word templates. The appellate brief, letter, and memorandum templates are maintained separately. |
+| [wisconsin-legal-interpretation](skills/wisconsin-legal-interpretation/SKILL.md) | Apply Wisconsin's interpretive method, distinguish binding and persuasive authority, and test contested readings. | Three work modes, a formal-memo template, and a structural linter. A passing lint result does not establish legal accuracy. |
+
+The [September 20, 2026 assessment](docs/ASSESSMENT-2026-09-20.md) explains the
+substantive corrections, implementation changes, validation, and remaining limits.
+
+## Install or adapt
+
+Copy a **complete skill folder** to a new installation target after checking for
+an existing copy and local changes:
+
+| Host | Project installation | Personal installation |
+|---|---|---|
+| Claude Code | `.claude/skills/<skill-name>/` | `~/.claude/skills/<skill-name>/` |
+| Codex | `.agents/skills/<skill-name>/` | `~/.agents/skills/<skill-name>/` |
+
+Ask for the task, or invoke `/<skill-name>` in Claude Code or `$<skill-name>` in
+Codex. The optional `agents/openai.yaml` files supply Codex display metadata.
+
+For Claude skill upload, use one packaged skill ZIP and the account's supported
+import flow. For ChatGPT, custom GPTs, and other chat/API hosts, supply the
+entrypoint and task-relevant references as instructions, attachments, or retrieved
+context. This does not create browsing, Python, storage, or database access.
+See [portability and capability profiles](docs/PORTABILITY.md) for exact boundaries
+and prompt-export instructions.
+
+## Local tools and validation
+
+Use **Python 3.10 or later**. The filing builder requires `python-docx`; metadata
+validation requires `PyYAML`. The citation tool and memo linter use the standard
+library. From the repository root:
+
+```sh
+python -m pip install -r requirements-dev.txt
+python scripts/skill_tools.py validate
+python -m unittest discover -s tests -v
+python scripts/skill_tools.py package --out dist/skills
+```
+
+Choose a new package output directory. Each deterministic ZIP contains one complete
+skill folder, its MIT license, and a checksum manifest. CI runs the checks on
+Windows and Linux with Python 3.10 and 3.12.
+
+Build a fill-in circuit-court template with explicit draft mode:
+
+```sh
+python skills/wisconsin-legal-writing/scripts/build_filing.py --spec skills/wisconsin-legal-writing/assets/01-motion.json --out motion-draft.docx --draft
+```
+
+Existing output files are preserved unless `--overwrite` is explicitly supplied.
+Draft mode permits unresolved placeholders. Without it, the builder performs
+additional input checks, but neither mode certifies a document for filing. Inspect
+the rendered pages, governing requirements, factual support, and actual signatures.
+Appellate output must use the separate appellate template and current Rule 809.19.
+
+See the [citation tool guide](skills/cite-check/references/evidence-tool.md) for
+evidence-log commands, and the [interpretation README](skills/wisconsin-legal-interpretation/README.md)
+for formal-memo validation.
+
+## Verification and maintenance
+
+Skill text is a research aid, not retrieved authority. Verify the controlling
+version, court, jurisdiction, primary text, and relevant subsequent treatment when
+using it. Record the checks actually performed. Identify missing source access or
+citator coverage explicitly; never infer a completed check from a template, an
+LLM's confidence, or a successful script.
+
+Court rules and orders control over typography preferences. Preserve the user's
+actual facts, role, voice, and authorized scope. A drafting request does not itself
+direct filing or service. Keep private matter files and credentials out of this
+public repository.
+
+After reviewed changes, refresh manifests with
+`python scripts/skill_tools.py manifest`, then rerun validation and relevant tests.
+Rebuild and visually inspect affected Word templates after specification or layout
+changes. Recheck current primary law before revising legal guidance. These aids do
+not replace matter-specific legal review or any professional review required by law.
+
+## Author and license
+
+William Horschak is a legal professional in Wisconsin, with a background
+in operations management, and maintains this repository.
+
+- [Website](https://www.williamhorschak.com)
+- [LinkedIn](https://www.linkedin.com/in/williamhorschak)
+- [GitHub](https://github.com/williamhorschak-dev)
+
+Questions and corrections are welcome through repository issues. Licensed under
+[MIT](LICENSE); each distributable skill also includes the license.

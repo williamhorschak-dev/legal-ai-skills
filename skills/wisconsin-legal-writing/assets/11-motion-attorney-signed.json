@@ -1,0 +1,73 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CF-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "STATE OF WISCONSIN",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[DEFENDANT NAME]",
+    "designation": "Defendant"
+  },
+  "title": "Defendant's Motion to [RELIEF]",
+  "body": [
+    {
+      "type": "h1",
+      "text": "Motion"
+    },
+    {
+      "type": "p",
+      "text": "The defendant, [NAME], by his attorney, [ATTORNEY NAME], respectfully moves the Court, pursuant to Wis. Stat. § [___], for an order:"
+    },
+    {
+      "type": "num",
+      "text": "1. [First form of relief];"
+    },
+    {
+      "type": "num",
+      "text": "2. In addition or in the alternative, [second form of relief]; and"
+    },
+    {
+      "type": "num",
+      "text": "3. Granting whatever other relief justice requires. Wis. Stat. § [___]."
+    },
+    {
+      "type": "p",
+      "text": "[Timeliness paragraph. The grounds for the motion are set out in the memorandum below, which is incorporated into the motion.]"
+    },
+    {
+      "type": "h1",
+      "text": "I. Introduction"
+    },
+    {
+      "type": "p",
+      "text": "[Argument.]"
+    },
+    {
+      "type": "h1",
+      "text": "II. Conclusion"
+    },
+    {
+      "type": "p",
+      "text": "[NAME] respectfully asks the Court to [precise relief], and to grant such other relief as justice requires. Wis. Stat. § [___]. He requests a hearing on this motion."
+    }
+  ],
+  "signature": {
+    "style": "attorney",
+    "date": "Dated this ____ day of __________, [YEAR].",
+    "firm": "[FIRM NAME]",
+    "dba": "[d/b/a NAME, if any]",
+    "name": "[ATTORNEY NAME]",
+    "bar_no": "[0000000]",
+    "for_party": "Attorney for the Defendant, [CLIENT NAME]",
+    "address": "[STREET ADDRESS]",
+    "city_state_zip": "[CITY], Wisconsin [ZIP]",
+    "phone": "([___]) ___-____",
+    "email": "[attorney@firm.com]"
+  }
+}

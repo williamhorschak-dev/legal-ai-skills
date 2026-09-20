@@ -1,0 +1,4 @@
+interface:
+  display_name: "Legal Citation Check"
+  short_description: "Check citations against primary-source evidence"
+  default_prompt: "Use $cite-check for the attached legal task and identify any unverified sources or missing inputs."

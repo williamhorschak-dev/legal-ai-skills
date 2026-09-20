@@ -1,0 +1,83 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "document_type": "affidavit",
+  "signature_in_body": true,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Affidavit of [NAME] in Support of Plaintiff's Motion to [RELIEF]",
+  "signature": null,
+  "body": [
+    {
+      "type": "p",
+      "text": "[Use for an ordinary affidavit when a sworn statement is required or chosen. Confirm the applicable oath, signature, and notarial requirements. A generic affidavit does not satisfy the specialized procedures for a deposition, oath of office, recordable instrument, or will. For eligible unsworn statements, consider 05-declaration under Wis. Stat. § 887.015. Replace the venue below with the actual place of the notarial act and remove this note before execution.]"
+    },
+    {
+      "type": "p",
+      "text": "STATE OF [SIGNING STATE]\t)"
+    },
+    {
+      "type": "p",
+      "text": "\t) ss."
+    },
+    {
+      "type": "p",
+      "text": "[SIGNING COUNTY] COUNTY\t)"
+    },
+    {
+      "type": "p",
+      "text": "[NAME], being first duly sworn on oath, deposes and states:"
+    },
+    {
+      "type": "num",
+      "text": "1. I am [NAME AND RELATION TO THE MATTER] and make this affidavit on personal knowledge."
+    },
+    {
+      "type": "num",
+      "text": "2. [One evidentiary fact. No argument, no legal conclusions.]"
+    },
+    {
+      "type": "num",
+      "text": "3. Attached as Exhibit A is a true and correct copy of [document]."
+    },
+    {
+      "type": "p",
+      "text": "________________________________"
+    },
+    {
+      "type": "p",
+      "text": "[AFFIANT'S HANDWRITTEN SIGNATURE]"
+    },
+    {
+      "type": "p",
+      "text": "[AFFIANT'S PRINTED NAME AND ANY REQUIRED CONTACT INFORMATION]"
+    },
+    {
+      "type": "p",
+      "text": "Subscribed and sworn to before me this ____ day of __________, [YEAR]."
+    },
+    {
+      "type": "p",
+      "text": "____________________________"
+    },
+    {
+      "type": "p",
+      "text": "Notary Public, State of [NOTARY'S COMMISSIONING STATE]"
+    },
+    {
+      "type": "p",
+      "text": "My commission [expires ________ / is permanent]."
+    }
+  ]
+}

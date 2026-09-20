@@ -1,0 +1,53 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Motion to [RELIEF]",
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  },
+  "body": [
+    {
+      "type": "p",
+      "text": "Plaintiff [NAME], pro se, moves the Court for an Order [SPECIFIC RELIEF], pursuant to Wis. Stat. § [___]. Plaintiff files contemporaneously a Brief in Support and supporting exhibits identifying the specific deficiencies, the controlling legal standards, and the relief requested."
+    },
+    {
+      "type": "num",
+      "text": "1. [First form of relief, stated as an order the Court can sign];"
+    },
+    {
+      "type": "num",
+      "text": "2. In addition or in the alternative, [second form of relief]; and"
+    },
+    {
+      "type": "num",
+      "text": "3. Granting whatever other relief justice requires. Wis. Stat. § [___]."
+    },
+    {
+      "type": "p",
+      "text": "[Optional timeliness / procedural posture paragraph. The grounds for the motion are set out in the Brief in Support, which is incorporated into this motion.]"
+    },
+    {
+      "type": "p",
+      "text": "WHEREFORE, Plaintiff respectfully requests that the Court enter an order [relief, matching the opening paragraph], and granting such other and further relief as the Court deems just and proper."
+    }
+  ]
+}

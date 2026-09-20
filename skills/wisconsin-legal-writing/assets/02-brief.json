@@ -1,0 +1,85 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Brief in Support of Motion to [RELIEF]",
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  },
+  "body": [
+    {
+      "type": "h1",
+      "text": "Introduction"
+    },
+    {
+      "type": "p",
+      "text": "[One sentence framing the dispute.] [Two to three sentences of the concrete problem.]"
+    },
+    {
+      "type": "p",
+      "text": "The relief requested is narrow and enforceable. Plaintiff asks the Court to [specific relief]."
+    },
+    {
+      "type": "h1",
+      "text": "Background"
+    },
+    {
+      "type": "p",
+      "text": "[Chronological, with record cites. (Doc. __:__)]"
+    },
+    {
+      "type": "h1",
+      "text": "Argument"
+    },
+    {
+      "type": "h2",
+      "text": "I. [Full-sentence proposition the Court could adopt, with the statutory or case hook.]"
+    },
+    {
+      "type": "p",
+      "text": "[Rule with citation, case name italicized with the builder's markup: *State v. Salinas*, 2016 WI 44, ¶ 30, 369 Wis. 2d 9, 879 N.W.2d 609.] [Sub-rule or factor list. *Id.* ¶ 43.] [Application to these facts, naming the record. (Doc. __:__)] [Best counter-argument and the answer to it. *See also* Wis. Stat. § ___.]"
+    },
+    {
+      "type": "h3",
+      "text": "A. [Sub-proposition, complete sentence.]"
+    },
+    {
+      "type": "p",
+      "text": "[Argument.]"
+    },
+    {
+      "type": "h2",
+      "text": "II. [Second proposition.]"
+    },
+    {
+      "type": "p",
+      "text": "[Argument.]"
+    },
+    {
+      "type": "h1",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "text": "WHEREFORE, Plaintiff respectfully requests that the Court enter an order [precise relief, matching the motion word for word], and granting such other and further relief as the Court deems just and proper."
+    }
+  ]
+}

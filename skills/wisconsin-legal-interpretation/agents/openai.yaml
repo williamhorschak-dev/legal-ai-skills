@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wisconsin Legal Interpretation"
+  short_description: "Analyze disputed Wisconsin law with primary sources"
+  default_prompt: "Use $wisconsin-legal-interpretation for the attached legal task and identify any unverified sources or missing inputs."

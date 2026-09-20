@@ -1,0 +1,93 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": true,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Response to Defendant [NAME] First Set of Discovery Requests",
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  },
+  "body": [
+    {
+      "type": "p",
+      "text": "NOW COMES Plaintiff [NAME], pro se, and for his Answer to Defendant [NAME] (“[SHORT]”) First set of Discovery Requests to Plaintiff [NAME] as follows:"
+    },
+    {
+      "type": "h1",
+      "text": "Interrogatories"
+    },
+    {
+      "type": "p",
+      "text": "[Interrogatory text, reproduced verbatim.]"
+    },
+    {
+      "type": "answer",
+      "text": "ANSWER: [Answer fully under oath, or state the specific objection and its reason under Wis. Stat. § 804.08(1)(b). Identify any part answered and any part withheld. A timely, specific objection may be served in place of the objected-to answer; do not confuse it with a total failure to serve answers or objections under § 804.12(4). Request protective relief under § 804.01(3) when needed. Include only facts and objections supported by the actual request and investigation.]"
+    },
+    {
+      "type": "h1",
+      "text": "Requests for Production"
+    },
+    {
+      "type": "p",
+      "text": "[Request text, reproduced verbatim.]"
+    },
+    {
+      "type": "answer",
+      "text": "ANSWER: [State that inspection and related activities will be permitted as requested, or state the specific objection and reasons under Wis. Stat. § 804.09(2)(b)1. If objecting only in part, specify that part and permit inspection of the remainder. Identify actual responsive non-privileged materials and the production arrangements, or describe the reasonable search supporting a truthful no-documents response. Supplement as required by § 804.01(5).]"
+    },
+    {
+      "type": "h1",
+      "text": "Requests for Admission"
+    },
+    {
+      "type": "p",
+      "text": "[Request text, reproduced verbatim.]"
+    },
+    {
+      "type": "answer",
+      "text": "ANSWER: [Admit; specifically deny; truthfully qualify or admit part and deny the remainder; or state a proper objection and reasons. Lack of information or knowledge requires reasonable inquiry and a statement that the information known or readily obtainable is insufficient to admit or deny. See Wis. Stat. § 804.11(1)(b).]"
+    },
+    {
+      "type": "h1",
+      "text": "Verification"
+    },
+    {
+      "type": "p",
+      "text": "I, [NAME], am the [Plaintiff/Defendant] in this action. I have read the foregoing Answers to [PARTY]'s [First] Set of Interrogatories. Pursuant to Wis. Stat. § 887.015, I declare under penalty of false swearing under the law of Wisconsin that the foregoing answers are true and correct to the best of my knowledge, information, and belief."
+    },
+    {
+      "type": "p",
+      "text": "Signed on the ____ day of __________, [YEAR], at [CITY], [STATE]."
+    },
+    {
+      "type": "p",
+      "text": "________________________________"
+    },
+    {
+      "type": "p",
+      "text": "[NAME]"
+    },
+    {
+      "type": "p",
+      "text": "[Wis. Stat. § 804.08(1)(b): the person making the interrogatory answers signs their verification; an attorney making objections signs those objections when the party is represented. A self-represented answering party signs in their own capacity and does not need a fictitious second attorney signer. Use the actual person qualified to answer, including the appropriate officer or agent for an entity. Remove this drafting note before service.]"
+    }
+  ]
+}

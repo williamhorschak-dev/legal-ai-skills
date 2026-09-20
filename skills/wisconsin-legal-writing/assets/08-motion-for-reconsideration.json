@@ -1,0 +1,69 @@
+{
+  "county": "[COUNTY]",
+  "court": "CIRCUIT COURT",
+  "case_no": "[YYYY]-CV-[NNNNNN]",
+  "font": "Century Schoolbook",
+  "bold_court_line": false,
+  "appellate": false,
+  "proposed_order": false,
+  "first_party": {
+    "name": "[PARTY ONE]",
+    "designation": "Plaintiff"
+  },
+  "second_party": {
+    "name": "[PARTY TWO]",
+    "designation": "Defendant"
+  },
+  "title": "Plaintiff's Motion to Reconsider [ORDER]",
+  "signature": {
+    "style": "pro_se",
+    "date": "[DATE]",
+    "name": "[NAME]",
+    "role": "Plaintiff, pro se",
+    "address": "[STREET ADDRESS], [CITY], WI [ZIP]",
+    "phone": "(___) ___-____",
+    "email": "[email@example.com]"
+  },
+  "body": [
+    {
+      "type": "p",
+      "text": "[USE ONE OF THE TWO OPENINGS BELOW. Wis. Stat. § 805.17(3) applies ONLY to findings after a trial to the court. Citing it to reconsider a summary judgment ruling or a non-final order is wrong. *Teff v. Unity Health Plans Ins. Corp.*, 2003 WI App 115.]"
+    },
+    {
+      "type": "h1",
+      "text": "A. Non-final order"
+    },
+    {
+      "type": "p",
+      "text": "Plaintiff [NAME], pro se, respectfully moves this Court to reconsider its [DATE] Order [describing it]. That Order is non-final, and this Court “has the inherent authority to reconsider a nonfinal ruling any time prior to the entry of the final order or judgment.” *Teff v. Unity Health Plans Ins. Corp.*, 2003 WI App 115, ¶ 57. Reconsideration is warranted because the Order rests on [a manifest error of law / a manifest error of fact / newly discovered evidence]. *Koepsell's Olde Popcorn Wagons, Inc. v. Koepsell's Festival Popcorn Wagons, Ltd.*, 2004 WI App 129, ¶ 44. This motion does not re-argue the underlying motion, and it does not introduce evidence that could have been offered the first time."
+    },
+    {
+      "type": "h1",
+      "text": "B. Final judgment or order"
+    },
+    {
+      "type": "p",
+      "text": "Plaintiff [NAME], pro se, respectfully moves this Court under Wis. Stat. § 806.07(1)([letter]) for relief from the [Judgment/Order] entered [DATE], on the ground of [the statutory ground, in the statute's words]. [Explain timeliness: all grounds require a reasonable time; grounds (1)(a) and (c) also have a one-year limit; a ground under (1)(b) must comply with § 805.16. Verify the specific ground and deadline under § 806.07(2).]"
+    },
+    {
+      "type": "h1",
+      "text": "Argument"
+    },
+    {
+      "type": "h2",
+      "text": "I. [The specific error, stated as a proposition.]"
+    },
+    {
+      "type": "p",
+      "text": "[Identify precisely what the Court held, why it is error, and what authority controls. Do not re-argue.]"
+    },
+    {
+      "type": "p",
+      "text": "WHEREFORE, Plaintiff respectfully requests that the Court [vacate / amend] its [DATE] [Order/Judgment] and [specific relief], and grant such other and further relief as the Court deems just and proper."
+    },
+    {
+      "type": "p",
+      "text": "[Calendar the appeal deadline from the ORIGINAL judgment. A reconsideration motion that merely re-argues does not extend it, and its denial is not separately appealable. *Silverton Enters. v. General Cas. Co.*, 143 Wis. 2d 661 (Ct. App. 1988); § 806.07(2).]"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wisconsin Legal Writing"
+  short_description: "Draft and review Wisconsin court documents"
+  default_prompt: "Use $wisconsin-legal-writing for the attached legal task and identify any unverified sources or missing inputs."
