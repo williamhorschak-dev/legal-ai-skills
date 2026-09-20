@@ -4,6 +4,12 @@ Canonical skills live in `skills/`. Keep each skill independently usable with it
 references, scripts, license, and optional host metadata. Provider adapters must not
 duplicate or weaken substantive legal guidance.
 
+The maintainer is a nonlawyer publishing tools only. Follow `LEGAL_NOTICE.md` and
+`CONTRIBUTING.md`: public support is technical collaboration, not individual legal
+advice or confidential intake. Do not imply that the maintainer represents users,
+reviews their matters, or approves generated legal conclusions. Keep the standalone
+skill notices identical to the root notice and include them in prompt exports.
+
 Verify material legal corrections against current primary sources and record the
 retrieval date and affected scope in the assessment/source notes. Preserve the author's
 style as a preference, not a mandatory statewide rule. Use synthetic facts in tests and

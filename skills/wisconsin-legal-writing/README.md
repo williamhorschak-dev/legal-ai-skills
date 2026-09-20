@@ -1,5 +1,9 @@
 # wisconsin-legal-writing
 
+William Horschak is not a licensed attorney. This is a published research and
+drafting tool; the maintainer does not offer legal services through this project.
+Read the [legal notice and public support boundaries](LEGAL_NOTICE.md).
+
 Default style for filings in Wisconsin circuit courts (La Crosse, Trempealeau, and
 the western tier) and the Wisconsin Court of Appeals.
 

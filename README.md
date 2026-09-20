@@ -1,5 +1,12 @@
 # Legal AI Skills by William Horschak
 
+> **General information and software tools; no legal services.** William Horschak
+> is **not a licensed attorney**. This project does not provide legal advice or
+> representation from the maintainer. Using it or contacting him about it does not
+> by itself create an attorney-client relationship. Do not submit confidential or
+> case-specific information in public issues or pull requests.
+> Read the [legal notice and support boundaries](LEGAL_NOTICE.md).
+
 Reusable workflows for Wisconsin legal research, citation verification, and legal
 drafting. Originally developed for Claude, the same skill folders now support
 Claude Code, Codex, other Agent Skills hosts, and selective prompt use in ChatGPT
@@ -56,7 +63,7 @@ python scripts/skill_tools.py package --out dist/skills
 ```
 
 Choose a new package output directory. Each deterministic ZIP contains one complete
-skill folder, its MIT license, and a checksum manifest. CI runs the checks on
+skill folder, its MIT license, legal notice, and a checksum manifest. CI runs the checks on
 Windows and Linux with Python 3.10 and 3.12.
 
 Build a fill-in circuit-court template with explicit draft mode:
@@ -96,12 +103,16 @@ not replace matter-specific legal review or any professional review required by 
 
 ## Author and license
 
-William Horschak is a legal professional in Wisconsin, with a background
-in operations management, and maintains this repository.
+William Horschak is a nonlawyer software maintainer in Wisconsin, with a background
+in operations management. He publishes these tools and general reference materials;
+he does not provide legal services through this project.
 
 - [Website](https://www.williamhorschak.com)
 - [LinkedIn](https://www.linkedin.com/in/williamhorschak)
 - [GitHub](https://github.com/williamhorschak-dev)
 
-Questions and corrections are welcome through repository issues. Licensed under
-[MIT](LICENSE); each distributable skill also includes the license.
+Technical bug reports, general documentation corrections, and feature suggestions
+are welcome through repository issues. Do not request advice about an individual
+matter or submit confidential information. See [contribution and support guidelines](CONTRIBUTING.md).
+Licensed under [MIT](LICENSE); each distributable skill also includes the license
+and [legal notice](LEGAL_NOTICE.md).

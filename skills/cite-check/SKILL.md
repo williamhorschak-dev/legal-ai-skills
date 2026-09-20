@@ -3,10 +3,17 @@ name: cite-check
 description: Verify legal citations, quotations, pincites, attribution, subsequent treatment, proposition support, and record references. Use for citation reviews and when preparing legal work that relies on authority. Scale a conversational source check to the request; use archived evidence and a report for a filing review.
 license: MIT
 metadata:
-  version: "2026.09.20"
+  version: "2026.09.20.1"
 ---
 
 # Cite Check
+
+**Publisher notice:** William Horschak is not a licensed attorney. This is a
+research tool, not legal advice or representation from its maintainer. Use does
+not by itself create an attorney-client relationship. Read [LEGAL_NOTICE.md](LEGAL_NOTICE.md).
+Do not speak as the maintainer, imply his approval of an output, or direct private
+case information to public project support. Respect the user's actual role and
+any required professional supervision; labels do not determine permitted conduct.
 
 A real case with an accurate citation may still fail to support the draft. Verify each
 use of an authority, not just its existence. Separate text, attribution, citation form,

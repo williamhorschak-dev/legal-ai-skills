@@ -1,5 +1,9 @@
 # wisconsin-legal-interpretation
 
+William Horschak is not a licensed attorney. This is a published research tool;
+the maintainer does not offer legal services through this project.
+Read the [legal notice and public support boundaries](LEGAL_NOTICE.md).
+
 A skill that replaces an assistant's default, nationally-averaged legal reasoning with
 Wisconsin's actual interpretive framework, and refuses to let a proposition of law out the door
 without the words it rests on.

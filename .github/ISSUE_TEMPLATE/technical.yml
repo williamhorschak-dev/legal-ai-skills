@@ -1,0 +1,42 @@
+name: Technical issue or general correction
+description: Report a software defect, general documentation correction, or feature suggestion.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a **public technical support channel**, not legal intake.
+        William Horschak is not a licensed attorney and does not provide individual
+        legal advice through this project. Do not post case files, personal details,
+        privileged material, or requests for advice about your matter.
+        Read the [legal notice](https://github.com/williamhorschak-dev/legal-ai-skills/blob/main/LEGAL_NOTICE.md).
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope and privacy
+      options:
+        - label: This concerns software, general documentation, or a feature; I am not requesting advice about an individual matter.
+          required: true
+        - label: I have used fictional examples and excluded confidential information, case files, and personal identifying details.
+          required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of report
+      options:
+        - Software defect
+        - General documentation correction
+        - Feature suggestion
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Technical issue or general correction
+      description: Identify the affected skill or file. For a general legal-reference correction, link the official public source.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps or proposed change
+      description: Use synthetic inputs. Include host and version information when relevant, but no credentials or private case material.

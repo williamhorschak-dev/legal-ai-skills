@@ -197,8 +197,8 @@ bolded action label carrying an urgency tag: "(immediate)," "(now)."
 
 **Why it works.** The assessment paragraph is the memo's judgment in prose,
 kept separate from the steps so the reader can see where analysis ends and
-recommendation begins, which is exactly the separation the UPL boundary
-wants. The numbered steps are addressed to the attorney, not the client, and
+recommendation begins. That organization helps attorney review; it does not
+establish a UPL exception. The numbered steps are addressed to the attorney, and
 each is concrete enough to assign. The urgency tags rank the list without a
 paragraph of explanation: two words in parentheses tell the reader what
 cannot wait for the next status meeting. A memo that ends this way gets acted
@@ -234,18 +234,16 @@ then the signature rule, the name in bold, and beneath it:
 
 > Legal Assistant
 
-**Why it works.** The title is the UPL discipline in two words. The From line
-and the signature block both state the nonlawyer role plainly, so no reader,
-now or in discovery two years from now, can mistake the memo for a lawyer's
-opinion. Combined with the address-up framing (the memo goes to supervising
-attorneys, recommends steps to them, and advises no client), the document
-stays cleanly on the right side of SCR 23.02(2)(m)'s safe harbor. The page
-furniture, running header and `Page X of Y` footer, does quiet work too: a
-privileged document that knows its own page count is a document whose partial
-production can be detected.
+**Why it works.** The From line and signature block accurately identify the
+writer's nonlawyer role. Routing the memo to the supervising attorney supports
+review, but neither the title nor the addressee establishes compliance by itself.
+Reliance on SCR 23.02(2)(m) requires actual supervision consistent with SCR 20:5.3;
+see [the UPL guidance](memoranda.md#12-the-upl-boundary). Privilege and work-product
+protection also depend on the facts, not the label. A running header and
+`Page X of Y` footer help a reviewer recognize missing pages.
 
 **The move to steal:** the honest title, everywhere the document identifies
-its author. It costs nothing and it is the cheapest UPL protection there is.
+its author, together with an accurate review status and actual supervision.
 
 ---
 

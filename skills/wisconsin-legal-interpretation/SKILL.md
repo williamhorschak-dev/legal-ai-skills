@@ -11,10 +11,17 @@ description: >-
   case-specific appellate procedure, and not for routine deadline computation.
 license: MIT
 metadata:
-  version: "2026.09.20"
+  version: "2026.09.20.1"
 ---
 
 # Wisconsin Legal Interpretation
+
+**Publisher notice:** William Horschak is not a licensed attorney. This is a
+research tool, not legal advice or representation from its maintainer. Use does
+not by itself create an attorney-client relationship. Read [LEGAL_NOTICE.md](LEGAL_NOTICE.md).
+Do not speak as the maintainer, imply his approval of an output, or direct private
+case information to public project support. Respect the user's actual role and
+any required professional supervision; labels do not determine permitted conduct.
 
 Source access is required to verify current law. The optional memo linter uses
 Python 3.10+ and the standard library.
@@ -289,24 +296,30 @@ substantive use.
 
 ## Scope boundary
 
-This skill interprets law and documents its reasoning. **It does not decide anything, and it is
-not legal advice.** The requester decides.
+This skill supports research and documents reasoning. It does not authorize anyone
+to practice law or provide legal services on the maintainer's behalf. The actual
+work, relationships, and applicable rules determine the permitted scope; calling
+an answer "research" or leaving the final decision to someone else is not an exemption.
 
-Posture changes the labeling, not the analysis. **Ask which posture applies only when it will
-change the output** — that is, when the work will be written up (Modes 2 and 3), or when the
-question sits near the practice-of-law line. A Mode 1 lookup does not need the question asked at
-all. When the answer is not obvious and cannot be asked for, say which posture you assumed.
+Use role information already supplied. Ask about the role only when it materially
+affects the work, audience, or permitted assistance; a general legal lookup does
+not need an intake interview. If material authority or supervision is unclear,
+continue general research and identify the unresolved boundary without assuming it away.
 
-- **Nonlawyer working under attorney supervision.** The output is prepared for attorney review,
-  labeled as such, and addressed to the supervising attorney rather than to a client. It contains
-  no sentence addressed to a client and no recommendation that a client act. The
-  unauthorized-practice line is real; the safe side of it is analysis routed upward.
-- **Self-represented.** The output is research for the requester's own use, and says so.
-- **Licensed attorney.** The output is a research memorandum; the attorney's own judgment governs.
+- **Nonlawyer under attorney supervision.** Route the work to the actual supervising
+  attorney for substantive review before client advice. Do not invent supervision;
+  a review label or change in addressee cannot supply it.
+- **Self-represented.** Identify research as for the requester's own use. Do not
+  imply that the maintainer represents the requester or that self-representation
+  authorizes representing someone else.
+- **Licensed attorney.** Support the attorney's independent judgment and verification.
+- **General publication or technical support.** Use general explanations and
+  synthetic examples; do not turn public project support into individual case advice.
 
-When a question sits on the practice-of-law line — whether to file, whether to settle, what a
-party should do — flag it `[FILL-IN]` as a decision for the requester rather than answering
-around it.
+Separate legal analysis from decisions to file, settle, or take other action. Identify
+missing facts and unresolved decisions explicitly; do not imply that an automated
+recommendation or disclaimer establishes authority to give individualized legal advice.
+See [LEGAL_NOTICE.md](LEGAL_NOTICE.md) and the governing primary sources for scope.
 
 ## Reference files
 

@@ -39,7 +39,10 @@ Generate a selective prompt bundle rather than pasting the whole library every t
 python scripts/skill_tools.py prompt --skill cite-check --reference references/verification.md --reference references/sources.md --out cite-check-prompt.md
 ```
 
-The export includes the entrypoint and exactly the requested Markdown files. If the task
+The export always includes the publisher's legal notice and the entrypoint, plus
+the requested Markdown files. Preserve the notice when adapting the workflow. It
+identifies the maintainer as a nonlawyer and limits project support to technical
+collaboration; it does not authorize a deployment to provide legal services. If the task
 calls for another reference, provide it too. A long-context model can accept more files;
 smaller contexts should use task-specific retrieval. Do not assume unseen references
 were read. Instructions can transfer across LLMs; reliable behavior still requires
@@ -70,7 +73,7 @@ python scripts/skill_tools.py package --out dist/skills
 ```
 
 Choose a new output directory for each package build. ZIPs have deterministic member
-order/timestamps, a single skill folder at the root, its license, and byte-level
+order/timestamps, a single skill folder at the root, its license, legal notice, and byte-level
 checksums. ZIP compatibility does not establish legal accuracy. After intentional
 source changes, inspect the diff, run tests, and regenerate manifests with
 `python scripts/skill_tools.py manifest`. Committed text uses LF endings to keep hashes

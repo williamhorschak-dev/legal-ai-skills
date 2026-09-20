@@ -1,5 +1,13 @@
 # wisconsin-legal-writing
 
+## 2026.09.20.1
+
+- Added a standalone publisher notice identifying the maintainer as a nonlawyer,
+  the absence of legal services through the project, and public support boundaries.
+- Corrected UPL guidance so actual work and supervision control; removed an
+  unsupported enforcement claim and reliance on an unverified secondary guideline.
+- Templates and document layout are unchanged by this publication-scope update.
+
 ## 2026.09.20
 
 - Corrected appellate routing and deadline guidance, discovery objections and

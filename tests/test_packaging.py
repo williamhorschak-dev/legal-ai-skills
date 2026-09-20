@@ -2,6 +2,7 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 import zipfile
 
 
@@ -35,6 +36,7 @@ class PackagingTests(unittest.TestCase):
                     self.assertTrue(all(item.create_system == 3 for item in archive.infolist()))
                     self.assertIn(f"{folder.name}/SKILL.md", names)
                     self.assertIn(f"{folder.name}/LICENSE", names)
+                    self.assertEqual(archive.read(f"{folder.name}/LEGAL_NOTICE.md"), (ROOT / "LEGAL_NOTICE.md").read_bytes())
                     self.assertIn(f"{folder.name}/MANIFEST.sha256", names)
                     self.assertTrue(all(name.startswith(folder.name+"/") for name in names))
                     self.assertFalse(any("__pycache__" in name for name in names))
@@ -58,11 +60,39 @@ class PackagingTests(unittest.TestCase):
             tools.export_prompt("cite-check", ["references/verification.md"], target)
             text = target.read_text(encoding="utf-8")
             self.assertIn("Included file: SKILL.md", text)
+            self.assertIn((ROOT / "LEGAL_NOTICE.md").read_text(encoding="utf-8"), text)
+            self.assertLess(text.index("Included file: LEGAL_NOTICE.md"), text.index("Included file: SKILL.md"))
             self.assertIn("Included file: references/verification.md", text)
             self.assertNotIn("Included file: references/sources.md", text)
             with self.assertRaises(FileExistsError):
                 tools.export_prompt("cite-check", [], target)
             self.assertEqual(text, target.read_text(encoding="utf-8"))
+
+    def test_prompt_export_retains_notice_once_when_also_requested(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "prompt.md"
+            tools.export_prompt("cite-check", ["LEGAL_NOTICE.md"], target)
+            self.assertEqual(target.read_text(encoding="utf-8").count("Included file: LEGAL_NOTICE.md"), 1)
+
+    def test_missing_or_changed_notice_blocks_validation_and_export(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            skill = root / "skills/cite-check"
+            skill.mkdir(parents=True)
+            (root / "LEGAL_NOTICE.md").write_bytes((ROOT / "LEGAL_NOTICE.md").read_bytes())
+            for name in ("SKILL.md", "LICENSE"):
+                (skill / name).write_bytes((tools.SKILLS / "cite-check" / name).read_bytes())
+            target = root / "prompt.md"
+            with mock.patch.multiple(tools, ROOT=root, SKILLS=root / "skills"):
+                for content in (None, b"Replaced notice\n"):
+                    with self.subTest(content=content):
+                        if content is not None:
+                            (skill / "LEGAL_NOTICE.md").write_bytes(content)
+                        (skill / "MANIFEST.sha256").write_text(tools.manifest(skill), encoding="utf-8", newline="\n")
+                        self.assertTrue(any("LEGAL_NOTICE.md" in error for error in tools.validate(root / "skills")))
+                        with self.assertRaisesRegex(ValueError, "LEGAL_NOTICE.md"):
+                            tools.export_prompt("cite-check", [], target)
+                        self.assertFalse(target.exists())
 
     def test_prompt_export_refuses_traversal_and_unknown_skills(self):
         with tempfile.TemporaryDirectory() as directory:

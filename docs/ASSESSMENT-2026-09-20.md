@@ -129,6 +129,17 @@ python scripts/skill_tools.py package --out dist/skills
 
 The local Python runtime was CPython 3.12.14 with `python-docx` 1.2.0 and PyYAML 6.0.3. Dependency versions are declared and pinned for this build. Existing outputs, stale evidence, source escapes, and accidental appellate use have explicit regression coverage.
 
+## Publication-scope update
+
+The maintainer confirmed that he is a nonlawyer publishing tools only. Added a
+prominent no-legal-services notice, standalone notices in all three skills,
+technical-only issue guidance, and notice retention in packages and prompt
+exports. Corrected UPL wording that could overstate the effect of labels or
+supervision. Two additional packaging/export regressions bring the suite to
+47 tests. See [the source review and limits](PUBLICATION-SCOPE-2026-09-20.md).
+These changes do not constitute a professional opinion that all uses comply with
+UPL rules. Earlier template and source checks above retain their stated scope.
+
 ## Remaining limits and next maintenance priorities
 
 1. **Complete the legal checks for the actual matter.** No source archive or automated test establishes that every reference remains current. Recheck statutes, treatment, local rules, standing orders, deadlines and the record for the work being delivered. No KeyCite or Shepard's review was performed for this repository assessment.

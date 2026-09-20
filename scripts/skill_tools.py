@@ -31,6 +31,15 @@ def folders(root=SKILLS):
     return sorted(p for p in root.iterdir() if p.is_dir() and (p / "SKILL.md").is_file())
 
 
+def legal_notice(folder):
+    notice = folder / "LEGAL_NOTICE.md"
+    if not notice.is_file():
+        raise ValueError(f"{folder.name}: missing standalone LEGAL_NOTICE.md")
+    if notice.is_symlink() or notice.read_bytes() != (ROOT / "LEGAL_NOTICE.md").read_bytes():
+        raise ValueError(f"{folder.name}: LEGAL_NOTICE.md must match the root publisher notice")
+    return notice
+
+
 def validate(root=SKILLS):
     try:
         import yaml
@@ -65,6 +74,10 @@ def validate(root=SKILLS):
             errors.append(f"{label}: SKILL.md exceeds the repository's 500-line entrypoint budget")
         if not (folder / "LICENSE").is_file():
             errors.append(f"{label}: missing standalone LICENSE")
+        try:
+            legal_notice(folder)
+        except (OSError, ValueError) as exc:
+            errors.append(str(exc))
         interface_path = folder / "agents/openai.yaml"
         if interface_path.exists():
             try:
@@ -112,7 +125,7 @@ def export_prompt(name, references, destination):
     if name not in {p.name for p in folders()}:
         raise ValueError(f"unknown skill: {name}")
     folder = SKILLS / name
-    paths = [folder / "SKILL.md"]
+    paths = [legal_notice(folder), folder / "SKILL.md"]
     for reference in references:
         path = (folder / reference).resolve()
         if not path.is_relative_to(folder.resolve()) or path.suffix != ".md" or not path.is_file():
@@ -138,7 +151,7 @@ def main():
             if errors:
                 print("\n".join(errors), file=sys.stderr)
                 return 1
-            print(f"Validated {len(folders())} skills, metadata, links, licenses and checksums.")
+            print(f"Validated {len(folders())} skills, metadata, links, licenses, publisher notices and checksums.")
         elif args.command == "manifest":
             for folder in folders():
                 (folder / "MANIFEST.sha256").write_text(manifest(folder), encoding="utf-8", newline="\n")

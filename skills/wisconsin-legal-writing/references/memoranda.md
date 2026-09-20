@@ -655,39 +655,30 @@ document as a prediction is not itself an exemption from practice rules.
 
 ### The rules
 
-SCR 23.01 defines the practice of law as "the application of legal principles
-and judgment with regard to the circumstances or objectives of another entity
-or person(s) where there is a client relationship of trust or reliance and
-which require the knowledge, judgment, and skill of a person trained as a
-lawyer," and its first enumerated category is "[g]iving advice or counsel to
-others as to their legal rights or the legal rights or responsibilities of
-others for fees or other consideration." SCR 23.02 confines practice to
-licensed active State Bar members, and Wis. Stat. § 757.30 is the criminal
-backstop: practicing law without a license is punishable by fine or up to a
-year in the county jail, and § 757.30(2) reaches anyone who "for compensation
-or pecuniary reward gives professional legal advice not incidental to his or
-her usual or ordinary business." Enforcement is reportedly weak; do not treat
-that as permission, because the professional-responsibility consequences land
-on the supervising attorney regardless.
+SCR 23.01 addresses applying legal judgment to another person's circumstances
+within a relationship of trust or reliance and enumerates advice, document
+preparation, representation, and negotiation. SCR 23.02 requires licensure
+subject to its specific exceptions. Wis. Stat. § 757.30 separately addresses
+unauthorized practice and holding oneself out as authorized. Do not infer an
+exception merely because work is free, described as research, or produced by AI.
 
-The safe harbor is SCR 23.02(2)(m): "Acting as a nonlawyer assistant under
-the supervision of a lawyer in compliance with SCR 20:5.3." Note the
-condition. The exception exists only where actual supervision exists. Under
-SCR 20:5.3(b), a lawyer with direct supervisory authority over a nonlawyer
-"shall make reasonable efforts to ensure that the person's conduct is
-compatible with the professional obligations of the lawyer," and under
-20:5.3(c) the lawyer answers for conduct the lawyer orders, ratifies, or
-knowingly fails to remediate. Wisconsin does not license paralegals;
-certification is voluntary; but all paralegals must be attorney-supervised
-and cannot practice independently (WisBar).
+For a nonlawyer assistant relying on SCR 23.02(2)(m), actual lawyer supervision
+in compliance with SCR 20:5.3 is required. Under SCR 20:5.3(b), a supervising
+lawyer must make reasonable efforts to ensure compatible conduct. Paragraph (c)
+specifies responsibility for ordered or knowingly ratified conduct and for a
+supervisor's knowing failure to take remedial action while consequences can be
+avoided or mitigated. Responsibility depends on those conditions; it is not
+automatic liability for every act by an assistant.
+
+Other exceptions have their own limits. In particular, SCR 23.02(2)(w) covers
+general legal information, not advice directed to a specific individual's
+specific matter. Do not describe software publication as a blanket exemption.
 
 ### What this means for a memo
 
-The ABA Model Guidelines (persuasive in Wisconsin, not adopted by rule, and
-read via a secondary reproduction, `[UNVERIFIED]` as to exact wording) permit
-delegating "factual investigation and research, legal research, and the
-preparation of legal documents" under supervision, and forbid delegating
-responsibility for a legal opinion rendered to a client.
+The following is a recommended workflow for supervised research under the
+rules above, not a statement that every described task is permitted in every
+setting. Confirm the actual assignment and supervising lawyer's instructions.
 
 **The paralegal may:** conduct the research; read and analyze the statutes,
 rules, and cases; synthesize the authority; draft the entire memo, Discussion
@@ -705,9 +696,11 @@ used for client advice. Do not independently render a legal opinion to the clien
 The distinction rests on the actual work, relationship, supervision, and rules,
 not on replacing "you should" with "a court would likely conclude."
 
-Primary sources: [SCR ch. 23](https://www.wicourts.gov/sc/scrule/DisplayDocument.pdf?content=pdf&seqNo=692090)
-and [SCR 20:5.3](https://www.wicourts.gov/sc/scrule/DisplayDocument.pdf?content=pdf&seqNo=1121033).
-Check their current versions and applicable exceptions for the actual role.
+Primary sources: [SCR ch. 23](https://www.wicourts.gov/sc/scrule/DisplayDocument.pdf?content=pdf&seqNo=692090),
+[SCR 20:5.3](https://www.wicourts.gov/sc/scrule/DisplayDocument.pdf?content=pdf&seqNo=1121033),
+and [Wis. Stat. § 757.30](https://docs.legis.wisconsin.gov/statutes/statutes/757.pdf).
+Texts consulted September 20, 2026. Check current versions and applicable
+exceptions for the actual role; this is not a citator audit or project legal opinion.
 
 ### The language the memo carries
 
@@ -715,9 +708,9 @@ Three things. The From line states the nonlawyer title plainly: "Legal
 Assistant" or "Paralegal," never a title that reads as a lawyer's. The
 signature block matches. And adjacent to the work product legend, a
 review-status legend. No Wisconsin authority prescribes specific wording
-`[UNVERIFIED]`; this form is constructed from SCR 20:5.3, SCR 23.02(2)(m),
-and the ABA Guidelines, and the supervising attorney should approve the office's
-version:
+`[UNVERIFIED]`; this suggested form reflects SCR 20:5.3 and SCR 23.02(2)(m),
+and the supervising attorney should approve the office's version. Use it only
+when the stated direction and supervision actually exist:
 
 ```
 This memorandum was prepared by a nonlawyer at the direction of and for
