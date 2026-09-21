@@ -39,6 +39,25 @@ Generate a selective prompt bundle rather than pasting the whole library every t
 python scripts/skill_tools.py prompt --skill cite-check --reference references/verification.md --reference references/sources.md --out cite-check-prompt.md
 ```
 
+Or choose a named profile:
+
+```sh
+python scripts/skill_tools.py prompt --profile citation-audit --out citation-audit.md
+python scripts/skill_tools.py prompt --profile draft-review --out draft-review.md
+python scripts/skill_tools.py prompt --profile interpretation-lookup --out lookup.md
+python scripts/skill_tools.py prompt --profile interpretation-analysis --out analysis.md
+python scripts/skill_tools.py prompt --profile formal-memo --out formal-memo.md
+```
+
+Profiles select maintained references, not separate copies of the legal guidance.
+Add a task-specific file with `--reference` if needed. Each export identifies the
+skill version, commit, dirty-checkout status, profile, and SHA-256 of every included
+file. A null commit explicitly means Git provenance was unavailable. Export never
+overwrites an existing file. Releases include the five exports in `prompt-packs.zip`.
+
+For another host, run the [evaluation protocol](../evals/README.md) with that host's
+actual model and capabilities. See [observed coverage](TESTED-COMPATIBILITY.md).
+
 The export always includes the publisher's legal notice and the entrypoint, plus
 the requested Markdown files. Preserve the notice when adapting the workflow. It
 identifies the maintainer as a nonlawyer and limits project support to technical

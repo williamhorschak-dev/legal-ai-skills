@@ -41,6 +41,30 @@ and a note explaining the signal, relevant treatment, and review date. The softw
 cannot confirm the truth of that attestation. With only free-source screening use
 `caution`, not `pass`.
 
+New records should include structured `provenance` rather than keeping the source
+origin and version only in notes. Existing records without it remain readable:
+
+```json
+{
+  "provenance": {
+    "origin": "https://official.example.invalid/source.pdf",
+    "retrieved_at": "2026-09-20T14:30:00-05:00",
+    "version": "The edition/effective period actually read; state uncertainty",
+    "extraction_method": "PDF text extraction; page images separately compared",
+    "original_file": "opinions/source.pdf",
+    "original_sha256": "<actual SHA-256 of the archived original>"
+  }
+}
+```
+
+Use the actual URL or identify a supplied document in `origin`. Record the actual
+retrieval time with timezone. `original_file` and `original_sha256` are optional
+together, and bind an extraction to an original inside the archive. The helper
+validates their hash and the field structure; it cannot authenticate a URL,
+determine the operative legal version, or prove that a visual comparison occurred.
+For native text with no separate original, omit both original fields and describe
+the method accurately. Keep this evidence private to the authorized matter.
+
 ```sh
 python <skill-dir>/scripts/cite_check.py record --inventory inventory.json --document draft.docx --sources sources --log checks.jsonl --entry entry.json
 ```

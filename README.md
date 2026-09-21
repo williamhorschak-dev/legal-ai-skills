@@ -31,6 +31,16 @@ substantive corrections, implementation changes, validation, and remaining limit
 
 ## Install or adapt
 
+Start with the [latest release](https://github.com/williamhorschak-dev/wisconsin-legal-ai-skills/releases/latest).
+It includes three complete skill ZIPs, five task-specific prompt exports, the
+synthetic evaluation suite, checksums, and the tested compatibility record.
+
+| Your setup | Start here |
+|---|---|
+| Claude Code or Codex | Extract each desired skill ZIP and copy its complete folder to the installation path below. |
+| ChatGPT or another chat application | Open `prompt-packs.zip`, choose one task profile, and provide that Markdown file as instructions/context along with the actual task. |
+| Another LLM application or local model | Use the same skill folders or prompt profiles; test the actual host and tools with the [evaluation protocol](evals/README.md). |
+
 Copy a **complete skill folder** to a new installation target after checking for
 an existing copy and local changes:
 
@@ -48,6 +58,11 @@ entrypoint and task-relevant references as instructions, attachments, or retriev
 context. This does not create browsing, Python, storage, or database access.
 See [portability and capability profiles](docs/PORTABILITY.md) for exact boundaries
 and prompt-export instructions.
+
+For a first example, see the completed fictional [citation check](skills/cite-check/references/synthetic-example.md),
+[formatting request](skills/wisconsin-legal-writing/references/synthetic-example.md), or
+[historical lookup](skills/wisconsin-legal-interpretation/references/synthetic-example.md).
+These demonstrate the workflow without implying that invented materials are law.
 
 ## Local tools and validation
 
@@ -83,6 +98,17 @@ evidence-log commands, and the [interpretation README](skills/wisconsin-legal-in
 for formal-memo validation.
 
 ## Verification and maintenance
+
+Read the [tested compatibility record](docs/TESTED-COMPATIBILITY.md) before treating
+format compatibility as evidence of model performance. The [24-scenario suite](evals/README.md)
+supports paired baseline/skill trials and hash-bound reviews; unrun or unreviewed
+trials cannot pass. Model calls are opt-in and are not run by ordinary CI.
+
+The [source register](docs/legal-sources.json) tracks review scope and affected files.
+Its [maintenance procedure](docs/SOURCE-MAINTENANCE.md) distinguishes new checks,
+inherited reviews, and pending work. [Template QA](docs/TEMPLATE-QA.md) separates
+the automatic rebuild checks from rendered-page review. See the
+[release procedure](docs/RELEASING.md) and [current release notes](docs/RELEASE-NOTES.md).
 
 Skill text is a research aid, not retrieved authority. Verify the controlling
 version, court, jurisdiction, primary text, and relevant subsequent treatment when

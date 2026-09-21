@@ -97,6 +97,21 @@ def validate_entry(entry, inv, root):
         raise ValueError("result must be pass, fail, unverified or caution")
     if not isinstance(entry.get("note"), str) or not entry["note"].strip():
         raise ValueError("every check needs a note describing what was reviewed or what blocked it")
+    if "provenance" in entry:
+        provenance = entry["provenance"]
+        if not isinstance(provenance, dict) or any(not isinstance(provenance.get(k), str) or not provenance[k].strip()
+                for k in ("origin", "retrieved_at", "version", "extraction_method")):
+            raise ValueError("provenance needs origin, retrieved_at, version and extraction_method strings")
+        try:
+            retrieved = datetime.fromisoformat(provenance["retrieved_at"].replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise ValueError("provenance retrieved_at must be an ISO-8601 timestamp") from exc
+        if retrieved.tzinfo is None:
+            raise ValueError("provenance retrieved_at needs a timezone")
+        if "original_file" in provenance or "original_sha256" in provenance:
+            original = source_path(root, provenance.get("original_file"))
+            if provenance.get("original_sha256") != digest(original):
+                raise ValueError("provenance original source hash differs")
     if entry["result"] == "pass":
         if not all(isinstance(entry.get(k), str) and entry[k].strip() for k in ("file", "sha256", "locator", "matched")):
             raise ValueError("passing checks need file, sha256, locator and matched source evidence")
@@ -148,9 +163,15 @@ def append_entry(log, entry, inv, root):
     if any((e["use"], e["check"]) == (entry["use"], entry["check"]) for e in entries):
         raise ValueError("check already recorded; preserve this log and start a new run for corrections")
     entry = dict(entry, recorded_at=datetime.now(timezone.utc).isoformat())
-    # One writer per log. Existing lines are never edited by this command.
-    with Path(log).open("a", encoding="utf-8", newline="\n") as stream:
-        stream.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    # One writer per log. Preserve every prior byte, including an unterminated
+    # final record accepted by read_log; separate it before appending another.
+    with Path(log).open("ab+") as stream:
+        stream.seek(0, 2)
+        if stream.tell():
+            stream.seek(-1, 2)
+            if stream.read(1) not in (b"\n", b"\r"):
+                stream.write(b"\n")
+        stream.write((json.dumps(entry, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
 def cell(value):

@@ -3,7 +3,7 @@ name: wisconsin-legal-writing
 description: Draft or review Wisconsin circuit court and Court of Appeals filings, including motions, briefs, discovery responses, declarations, and proposed orders. Use for document structure, procedural issue spotting, signatures, and filing review. Use the interpretation skill for disputed legal meaning rather than document production.
 license: MIT
 metadata:
-  version: "2026.09.20.1"
+  version: "2026.09.20.2"
 ---
 
 # Wisconsin Legal Writing
@@ -119,6 +119,9 @@ them. Read the current eFiling technical requirements for PDF/DOCX, searchable t
 stamp clearance, page numbering, size limits, and signature treatment.
 
 ## Deliver with an honest status
+
+See the [synthetic formatting example](references/synthetic-example.md) for a
+limited editing request that preserves the supplied words, signer, and scope.
 
 Check the relief, support for each factual claim, adverse authority, citation accuracy,
 signature/contact details, required attachments, redaction, service, and current local

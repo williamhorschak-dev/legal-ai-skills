@@ -1,5 +1,8 @@
 import importlib.util
+import hashlib
+import json
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 from unittest import mock
@@ -7,6 +10,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 spec = importlib.util.spec_from_file_location("skill_tools", ROOT / "scripts/skill_tools.py")
 tools = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(tools)
@@ -101,6 +105,51 @@ class PackagingTests(unittest.TestCase):
                 with self.subTest(name=name, references=references), self.assertRaises(ValueError):
                     tools.export_prompt(name, references, target)
                 self.assertFalse(target.exists())
+
+    def test_named_profiles_bind_exact_files_version_and_checkout(self):
+        for profile, config in json.loads(tools.PROFILES.read_text(encoding="utf-8")).items():
+            with self.subTest(profile=profile):
+                text, build = tools.render_prompt(None, profile=profile)
+                self.assertEqual(build["skill"], config["skill"])
+                self.assertEqual(build["version"], (ROOT / "VERSION").read_text(encoding="utf-8").strip())
+                self.assertEqual(set(build["files"]), {"SKILL.md", "LEGAL_NOTICE.md", *config["references"]})
+                for relative, digest in build["files"].items():
+                    self.assertEqual(digest, hashlib.sha256((tools.SKILLS / config["skill"] / relative).read_bytes()).hexdigest())
+                self.assertIn("dirty", build)
+                self.assertIn("commit", build)
+        with self.assertRaisesRegex(ValueError, "belongs to"):
+            tools.render_prompt("cite-check", profile="formal-memo")
+
+    def test_release_assets_are_complete_checksum_bound_and_refuse_overwrite(self):
+        import build_release
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "release"
+            version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+            with mock.patch.object(build_release.skill_tools, "provenance", return_value={"commit": "1" * 40, "dirty": False}):
+                metadata = build_release.build(target, version)
+            self.assertFalse(metadata["preview"])
+            expected = {p.name + ".zip" for p in tools.folders()} | {"prompt-packs.zip", "evaluation-suite.zip", "BUILD.json", "SHA256SUMS.txt", "TESTED-COMPATIBILITY.md", "RELEASE-NOTES.md"}
+            self.assertEqual({p.name for p in target.iterdir()}, expected)
+            lines = (target / "SHA256SUMS.txt").read_text(encoding="utf-8").splitlines()
+            self.assertEqual(len(lines), len(expected) - 1)
+            for line in lines:
+                digest, name = line.split("  ", 1)
+                self.assertEqual(digest, hashlib.sha256((target / name).read_bytes()).hexdigest())
+            with zipfile.ZipFile(target / "prompt-packs.zip") as archive:
+                self.assertEqual(archive.namelist(), sorted(archive.namelist()))
+                for profile in json.loads(tools.PROFILES.read_text(encoding="utf-8")):
+                    self.assertIn(profile + ".md", archive.namelist())
+            with self.assertRaises(FileExistsError):
+                build_release.build(target, version, allow_dirty=True)
+
+    def test_release_refuses_dirty_or_unknown_provenance(self):
+        import build_release
+        with tempfile.TemporaryDirectory() as directory:
+            for provenance in ({"commit": "1" * 40, "dirty": True}, {"commit": None, "dirty": None}):
+                with self.subTest(provenance=provenance), mock.patch.object(build_release.skill_tools, "provenance", return_value=provenance):
+                    with self.assertRaisesRegex(ValueError, "clean Git checkout"):
+                        build_release.build(Path(directory) / "release", (ROOT / "VERSION").read_text().strip())
+            self.assertEqual(list(Path(directory).iterdir()), [])
 
 
 if __name__ == "__main__":

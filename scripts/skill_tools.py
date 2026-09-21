@@ -2,13 +2,16 @@
 """Validate, checksum, package, or selectively export the canonical skills."""
 import argparse
 import hashlib
+import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
+PROFILES = ROOT / "scripts/prompt-profiles.json"
 
 
 def files(folder):
@@ -121,7 +124,32 @@ def package(destination):
                 archive.writestr(info, path.read_bytes())
 
 
-def export_prompt(name, references, destination):
+def provenance():
+    """Record the checkout we actually built; never imply a dirty tree is HEAD."""
+    git = ["git", "-c", f"safe.directory={ROOT.as_posix()}", "-C", str(ROOT)]
+    try:
+        commit = subprocess.check_output(git + ["rev-parse", "HEAD"], stderr=subprocess.DEVNULL, text=True).strip()
+        dirty = bool(subprocess.check_output(git + ["status", "--porcelain", "--untracked-files=normal"], stderr=subprocess.DEVNULL, text=True).strip())
+        return {"commit": commit, "dirty": dirty}
+    except (OSError, subprocess.CalledProcessError):
+        return {"commit": None, "dirty": None}
+
+
+def profile_config(profile, name=None):
+    profiles = json.loads(PROFILES.read_text(encoding="utf-8"))
+    if profile not in profiles:
+        raise ValueError(f"unknown profile: {profile}; choose {', '.join(sorted(profiles))}")
+    config = profiles[profile]
+    if name and name != config["skill"]:
+        raise ValueError(f"profile {profile} belongs to {config['skill']}, not {name}")
+    return config
+
+
+def render_prompt(name, references=(), profile=None):
+    if profile:
+        config = profile_config(profile, name)
+        name = config["skill"]
+        references = [*config["references"], *references]
     if name not in {p.name for p in folders()}:
         raise ValueError(f"unknown skill: {name}")
     folder = SKILLS / name
@@ -131,9 +159,22 @@ def export_prompt(name, references, destination):
         if not path.is_relative_to(folder.resolve()) or path.suffix != ".md" or not path.is_file():
             raise ValueError(f"choose an existing Markdown reference inside {name}: {reference}")
         paths.append(path)
+    paths = list(dict.fromkeys(paths))
+    version_match = re.search(r'^  version: "([^"\n]+)"$', (folder / "SKILL.md").read_text(encoding="utf-8"), re.M)
+    if not version_match:
+        raise ValueError(f"{name}: missing quoted metadata.version")
+    build = {**provenance(), "skill": name, "version": version_match.group(1), "profile": profile,
+             "files": {path.relative_to(folder).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}}
     text = "# Legal skill prompt export\n\nApply this workflow within the host's instructions and actual tools. Missing references or capabilities must be disclosed; do not pretend to browse, run code, archive evidence, or check a citator. Ask for task-relevant references if they were not included. This is a prompt, not an installed runtime.\n\n"
+    text += "## Build provenance and included files\n\n```json\n" + json.dumps(build, indent=2) + "\n```\n\n"
+    text += "A null commit means Git provenance was unavailable. A dirty checkout differs from its recorded commit. File hashes identify the exact included bytes.\n"
     for path in dict.fromkeys(paths):
         text += f"\n---\n\n## Included file: {path.relative_to(folder).as_posix()}\n\n" + path.read_text(encoding="utf-8")
+    return text, build
+
+
+def export_prompt(name, references, destination, profile=None):
+    text, _ = render_prompt(name, references, profile)
     with Path(destination).open("x", encoding="utf-8", newline="\n") as stream:
         stream.write(text)
 
@@ -143,6 +184,7 @@ def main():
     parser.add_argument("command", choices=("validate", "manifest", "package", "prompt"))
     parser.add_argument("--out", type=Path)
     parser.add_argument("--skill")
+    parser.add_argument("--profile", help="named task profile from scripts/prompt-profiles.json")
     parser.add_argument("--reference", action="append", default=[])
     args = parser.parse_args()
     try:
@@ -160,9 +202,9 @@ def main():
                 parser.error("package requires --out <new-directory>")
             package(args.out)
         else:
-            if not args.out or not args.skill:
-                parser.error("prompt requires --skill <name> --out <new-file>")
-            export_prompt(args.skill, args.reference, args.out)
+            if not args.out or not (args.skill or args.profile):
+                parser.error("prompt requires --skill <name> or --profile <name>, and --out <new-file>")
+            export_prompt(args.skill, args.reference, args.out, args.profile)
     except (OSError, ValueError) as exc:
         print(f"skill_tools: {exc}", file=sys.stderr)
         return 2

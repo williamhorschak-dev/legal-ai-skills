@@ -11,7 +11,7 @@ description: >-
   case-specific appellate procedure, and not for routine deadline computation.
 license: MIT
 metadata:
-  version: "2026.09.20.1"
+  version: "2026.09.20.2"
 ---
 
 # Wisconsin Legal Interpretation
@@ -85,8 +85,10 @@ is genuinely contested or the user asks.
 
 For "what does § X say," "is this still good law," "what is the current text."
 
-Deliver: the **current primary text**, the **operative quotation**, the **citation**, the
-**direct source** the text was retrieved from, and the **date verified**. Nothing else.
+Deliver: the **primary text for the requested operative date**, the **operative quotation**,
+the **citation**, the **direct source** the text was retrieved from, and the **date verified**.
+For a historical lookup, identify the version and its effective period. If the applicable
+version cannot be established, disclose that limitation; do not silently use current text.
 
 No files written, no authority table, no red team, no memo scaffolding, and no interview: do
 not open with questions about forum, posture, or depth for a question that has one answer.
@@ -99,11 +101,16 @@ the list below is met on its own terms.
 
 **Escalate out of Mode 1 — say so, then switch — when any of these is true:**
 
-- The question concerns **conduct, a filing, or an event on a past date.** Mode 1 delivers
-  *current* text; a past-date question needs the version in force then, which is Mode 2's
-  operative-date work. "What did the ordinance say in 2022" is never a Mode 1 answer.
 - Reasonable readings differ, or the requester's own framing says the point is disputed.
-- The answer will be **filed, served, or relied on to meet a deadline**, which triggers rule 5.
+- Choosing the operative version itself presents a real dispute about applicability.
+
+Source date and analysis depth are separate choices. A historical lookup can stay in
+Mode 1; age alone does not require opposing arguments or a prediction. Intended reliance
+on an answer triggers rule 5's verification/disclosure safeguards in any mode, without
+requiring a contested analysis when the meaning is straightforward.
+
+See the [synthetic historical lookup](references/synthetic-example.md) for a
+complete short answer using supplied versions without claiming independent retrieval.
 
 ### Mode 2 — Contested interpretation
 

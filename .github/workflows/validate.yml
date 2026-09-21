@@ -20,5 +20,13 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m pip install -r requirements-dev.txt
       - run: python scripts/skill_tools.py validate
+      - run: python scripts/evaluate.py validate
+      - run: python scripts/source_registry.py validate
       - run: python -m unittest discover -s tests -v
-      - run: python scripts/skill_tools.py package --out dist/skills
+      - run: python scripts/build_release.py --out dist/release
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, verified 2026-09-20
+        with:
+          name: release-${{ matrix.os }}-py${{ matrix.python }}
+          path: dist/release/
+          if-no-files-found: error
+          retention-days: 14

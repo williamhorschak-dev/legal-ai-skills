@@ -3,7 +3,7 @@ name: cite-check
 description: Verify legal citations, quotations, pincites, attribution, subsequent treatment, proposition support, and record references. Use for citation reviews and when preparing legal work that relies on authority. Scale a conversational source check to the request; use archived evidence and a report for a filing review.
 license: MIT
 metadata:
-  version: "2026.09.20.1"
+  version: "2026.09.20.2"
 ---
 
 # Cite Check
@@ -104,6 +104,9 @@ Check the final revised draft, not just the original that was reviewed.
   or when the user chooses an explicitly unverified draft. Never relabel unchecked work.
 
 ## Access and confidentiality
+
+For a complete supplied-text example with honest verification limits, see
+[the synthetic citation check](references/synthetic-example.md).
 
 Reuse an authorized existing authenticated session when available. If login is needed,
 let the user complete it. Do not request credentials or one-time codes, bypass an access
