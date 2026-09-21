@@ -65,6 +65,25 @@ class CitationEvidenceTests(unittest.TestCase):
     def report(self):
         return self.cli("report", "--out", str(self.report_path))
 
+    def test_append_preserves_accepted_log_endings(self):
+        for ending in (b"", b"\n", b"\r\n", b"\r"):
+            with self.subTest(ending=ending):
+                original = json.dumps(self.evidence("citation"), ensure_ascii=False).encode("utf-8") + ending
+                self.log.write_bytes(original)
+                checker.append_entry(self.log, self.evidence("pincite"), self.inv, self.sources)
+                self.assertTrue(self.log.read_bytes().startswith(original))
+                self.assertEqual([e["check"] for e in checker.read_log(self.log, self.inv, self.sources)], ["citation", "pincite"])
+
+    def test_append_to_empty_log_and_reject_malformed_without_changing_it(self):
+        self.log.write_bytes(b"")
+        checker.append_entry(self.log, self.evidence(), self.inv, self.sources)
+        self.assertEqual(len(checker.read_log(self.log, self.inv, self.sources)), 1)
+        original = b'{"unfinished":'
+        self.log.write_bytes(original)
+        with self.assertRaises(ValueError):
+            checker.append_entry(self.log, self.evidence("pincite"), self.inv, self.sources)
+        self.assertEqual(self.log.read_bytes(), original)
+
     def test_missing_checks_create_unverified_report_with_nonzero_status(self):
         result = self.report()
         self.assertEqual(result.returncode, 1, result.stderr)
@@ -72,6 +91,20 @@ class CitationEvidenceTests(unittest.TestCase):
         self.assertIn("| UNVERIFIED |", text)
         self.assertIn("proposition: missing", text)
         self.assertIn("treatment: missing", text)
+
+    def test_structured_provenance_binds_original_and_survives_report(self):
+        provenance = {"origin": "supplied synthetic document", "retrieved_at": "2026-09-20T14:00:00Z",
+                      "version": "synthetic version 1", "extraction_method": "native text",
+                      "original_file": self.source.name, "original_sha256": checker.digest(self.source)}
+        entry = self.evidence(provenance=provenance)
+        checker.append_entry(self.log, entry, self.inv, self.sources)
+        records = checker.read_log(self.log, self.inv, self.sources)
+        self.assertEqual(records[0]["provenance"], provenance)
+        self.assertIn("synthetic version 1", checker.report(self.inv, records)[0])
+        for changes in ({"retrieved_at": "2026-09-20"}, {"retrieved_at": "not a date"},
+                        {"original_sha256": "0" * 64}, {"original_file": "../outside.txt"}, {"version": ""}):
+            with self.subTest(changes=changes), self.assertRaises((ValueError, OSError)):
+                checker.validate_entry(self.evidence(provenance={**provenance, **changes}), self.inv, self.sources)
 
     def test_complete_log_is_recorded_pass_with_hashes_and_explicit_limits(self):
         for check in checker.required_checks(self.inv["uses"][0]):

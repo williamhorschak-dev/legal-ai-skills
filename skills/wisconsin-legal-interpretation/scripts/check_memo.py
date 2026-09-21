@@ -1597,7 +1597,7 @@ def main() -> int:
     args = ap.parse_args()
 
     try:
-        with open(args.memo, encoding="utf-8") as fh:
+        with open(args.memo, encoding="utf-8-sig") as fh:
             text = fh.read()
     except OSError as exc:
         print(f"cannot read memo: {exc}", file=sys.stderr)

@@ -94,6 +94,20 @@ class FormalMemoTests(unittest.TestCase):
     def test_baseline_is_clean(self):
         self.assert_clean(self.run_memo(memo()))
 
+    def test_utf8_bom_has_same_substantive_result(self):
+        self.assert_clean(self.run_memo("\ufeff" + memo()))
+        invalid = memo().replace("red_team: full", "red_team: none").replace("MODERATE", "LOW")
+        for prefix in ("", "\ufeff"):
+            result = self.run_memo(prefix + invalid)
+            self.assertEqual(result.returncode, 2, result.stdout)
+            self.assertIn("red_team: none", result.stdout)
+
+    def test_bom_does_not_hide_missing_frontmatter(self):
+        for prefix in ("", "\ufeff"):
+            result = self.run_memo(prefix + "# Missing frontmatter\n")
+            self.assertEqual(result.returncode, 2, result.stdout)
+            self.assertIn("No YAML frontmatter", result.stdout)
+
     def test_existing_source_with_spaces_is_not_truncated(self):
         name = "Wis-Stat-809.23 (2023-24).md"
         self.assert_clean(self.run_memo(memo("sources/" + name), source_name=name))

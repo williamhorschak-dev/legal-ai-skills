@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "scope": "Public maintenance register, not a private matter source archive or certification of current law.",
+  "sources": [
+    {
+      "id": "seiu-intrinsic-and-confirmation",
+      "authority": "SEIU Healthcare Wisconsin v. WERC, 2025 WI 29",
+      "url": "https://www.wicourts.gov/sc/order/DisplayDocImage.pdf?docId=977376",
+      "proposition": "Consider intrinsic statutory sources before the plain-meaning call; distinguish extrinsic confirmation from using extrinsic material to resolve ambiguity.",
+      "operative_version": "Opinion filed 2025-06-27; paragraphs 8, 10-12 and 32.",
+      "status": "focused_primary_check",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Focused comparison of the official opinion and template/reference ordering. Enacted construction directives are treated as statutory text within their scope, an application of the intrinsic-source distinction; no opinion here decides every directive. No citator or full subsequent-treatment review.",
+      "review_basis": "docs/RELIABILITY-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-interpretation/assets/memo-template.md",
+        "skills/wisconsin-legal-interpretation/references/canons.md"
+      ],
+      "review_interval_days": 90
+    },
+    {
+      "id": "upl-scope",
+      "authority": "Wisconsin SCR chapter 23",
+      "url": "https://www.wicourts.gov/sc/rules/chap23.pdf",
+      "proposition": "Distinguish general publication from individualized work and assess actual conduct, relationships, and applicable exceptions.",
+      "operative_version": "Official chapter PDF read 2026-09-20; SCR 23.01 and 23.02, especially 23.02(2)(l), (m), and (w). Effective version must be rechecked for a deployment.",
+      "status": "focused_primary_check",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Read the specified provisions to maintain publication/support boundaries. No opinion on the maintainer's actual conduct or a user's deployment.",
+      "review_basis": "docs/PUBLICATION-SCOPE-2026-09-20.md; docs/RELIABILITY-2026-09-20.md",
+      "affected_files": [
+        "LEGAL_NOTICE.md",
+        "CONTRIBUTING.md",
+        "skills/wisconsin-legal-writing/SKILL.md",
+        "skills/wisconsin-legal-interpretation/SKILL.md"
+      ],
+      "review_interval_days": 90
+    },
+    {
+      "id": "appellate-practice",
+      "authority": "Wis. Stat. ch. 809",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/809.pdf",
+      "proposition": "Appellate routing, briefing, citation restrictions and deadline limitations.",
+      "operative_version": "Rules 809.10, 809.11, 809.19, 809.23 and 809.82. The prior review cited the then-published official PDF; no current amendment cutoff is inferred from its biennial edition.",
+      "status": "inherited_review",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Imported from the recorded prior primary-source review; not newly reverified during this maintenance-registry addition. Recheck operative text and amendments before substantive reliance.",
+      "review_basis": "docs/ASSESSMENT-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-writing/references/appellate.md",
+        "skills/wisconsin-legal-writing/references/checklists.md",
+        "skills/wisconsin-legal-interpretation/references/authority-hierarchy.md"
+      ],
+      "review_interval_days": 60
+    },
+    {
+      "id": "civil-time-and-signatures",
+      "authority": "Wis. Stat. ch. 801",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/801.pdf",
+      "proposition": "Identify the actual timing trigger and service method; distinguish electronic signature rules.",
+      "operative_version": "Sections 801.15 and 801.18. The prior review cited the then-published official PDF; no current amendment cutoff is inferred from its biennial edition.",
+      "status": "inherited_review",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Imported from the recorded prior primary-source review; not newly reverified during this maintenance-registry addition. Recheck operative text and amendments before substantive reliance.",
+      "review_basis": "docs/ASSESSMENT-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-writing/references/circuit-court.md",
+        "skills/wisconsin-legal-writing/references/signature-blocks.md"
+      ],
+      "review_interval_days": 60
+    },
+    {
+      "id": "pleadings-and-summary-judgment",
+      "authority": "Wis. Stat. ch. 802",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/802.pdf",
+      "proposition": "Separate pleading/signature requirements from presentation preferences; identify permitted summary-judgment evidence.",
+      "operative_version": "Sections 802.04, 802.05 and 802.08. The prior review cited the then-published official PDF; no current amendment cutoff is inferred from its biennial edition.",
+      "status": "inherited_review",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Imported from the recorded prior primary-source review; not newly reverified during this maintenance-registry addition. Recheck operative text and amendments before substantive reliance.",
+      "review_basis": "docs/ASSESSMENT-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-writing/references/circuit-court.md",
+        "skills/wisconsin-legal-writing/references/responding.md"
+      ],
+      "review_interval_days": 60
+    },
+    {
+      "id": "discovery-responses",
+      "authority": "Wis. Stat. ch. 804",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/804.pdf",
+      "proposition": "Distinguish specific objections from total nonresponse and preserve actual response-period qualifications.",
+      "operative_version": "Sections 804.08, 804.09, 804.11 and 804.12. The prior review cited the then-published official PDF; no current amendment cutoff is inferred from its biennial edition.",
+      "status": "inherited_review",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Imported from the recorded prior primary-source review; not newly reverified during this maintenance-registry addition. Recheck operative text and amendments before substantive reliance.",
+      "review_basis": "docs/ASSESSMENT-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-writing/references/responding.md",
+        "skills/wisconsin-legal-writing/assets/04-discovery-response.json",
+        "skills/wisconsin-legal-writing/assets/12-motion-to-compel.json"
+      ],
+      "review_interval_days": 60
+    },
+    {
+      "id": "reconsideration-relief",
+      "authority": "Wis. Stat. ch. 806",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/806.pdf",
+      "proposition": "Do not generalize the one-year limit to every ground for relief from a judgment or order.",
+      "operative_version": "Section 806.07. The prior review cited the then-published official PDF; no current amendment cutoff is inferred from its biennial edition.",
+      "status": "inherited_review",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Imported from the recorded prior primary-source review; not newly reverified during this maintenance-registry addition. Recheck operative text and amendments before substantive reliance.",
+      "review_basis": "docs/ASSESSMENT-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-writing/assets/08-motion-for-reconsideration.json"
+      ],
+      "review_interval_days": 60
+    },
+    {
+      "id": "declaration-exclusions",
+      "authority": "Wis. Stat. ch. 887",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/887.pdf",
+      "proposition": "Check declaration eligibility and exclusions; distinguish an ordinary affidavit from specialized instruments.",
+      "operative_version": "Section 887.015. The prior review cited the then-published official PDF; no current amendment cutoff is inferred from its biennial edition.",
+      "status": "inherited_review",
+      "last_reviewed": "2026-09-20",
+      "review_scope": "Imported from the recorded prior primary-source review; not newly reverified during this maintenance-registry addition. Recheck operative text and amendments before substantive reliance.",
+      "review_basis": "docs/ASSESSMENT-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-writing/assets/05-declaration.json",
+        "skills/wisconsin-legal-writing/assets/05b-affidavit.json",
+        "skills/wisconsin-legal-writing/references/circuit-court.md"
+      ],
+      "review_interval_days": 60
+    },
+    {
+      "id": "construction-statutes",
+      "authority": "Wis. Stat. ch. 990",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/990.pdf",
+      "proposition": "Apply definitions and construction provisions within their text and introductory qualifications.",
+      "operative_version": "Sections 990.001 and 990.01; operative amendment history must be established for the requested date.",
+      "status": "needs_primary_review",
+      "last_reviewed": null,
+      "review_scope": "Registry seed only. The HTML retrieval attempt was unavailable; no new verification date claimed.",
+      "review_basis": "docs/RELIABILITY-2026-09-20.md",
+      "affected_files": [
+        "skills/wisconsin-legal-interpretation/references/canons.md",
+        "skills/wisconsin-legal-interpretation/assets/memo-template.md"
+      ],
+      "review_interval_days": 60
+    }
+  ]
+}

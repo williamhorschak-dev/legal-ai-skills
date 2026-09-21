@@ -1,5 +1,12 @@
 # wisconsin-legal-writing
 
+## 2026.09.20.2
+
+- Added a completed fictional formatting example preserving words and actual signer.
+- Added repository regression coverage for all 11 JSON-backed templates and a
+  content-bound record for the inherited visual review of all 14 Word assets.
+- Document content and layout are unchanged in this release.
+
 ## 2026.09.20.1
 
 - Added a standalone publisher notice identifying the maintainer as a nonlawyer,

@@ -595,7 +595,7 @@ gate in front of it.
 9. **If ambiguous:** name the two or more senses and who reasonably holds each — *Kalal* ¶ 47.
    The test is not that the parties disagree (§ 1.4).
 
-### Stage C — Only after ambiguity
+### Stage C — Resolve remaining ambiguity; distinguish extrinsic confirmation
 
 10. **Substantive canons.** Lenity (which needs *grievous* ambiguity), constitutional avoidance,
     and generic judge-made remedial or liberal-construction maxims, subject to governing Wisconsin

@@ -61,21 +61,28 @@ of it.*
    cross-reference into a borrowed chapter and run this step again there.
 3. **Structure and related statutes**, and any textually manifest purpose.
 4. **Statutory history** — how the text itself has changed. (Intrinsic. Not legislative history.)
-5. **Construction statutes** — § 990.001, read with its introductory clause first.
+5. **Construction statutes** — § 990.001, read with its introductory clause first,
+   and chapter-specific enacted construction directives within their stated scope.
+   An enacted liberal-construction directive is statutory text; consider it here.
 6. **Intrinsic (textual) canons** — whole-text, surplusage, *noscitur*, *ejusdem generis*,
    *expressio unius*, absurdity avoidance. **These need no ambiguity finding.**
 7. **Binding construction of the same words**, run through `authority-hierarchy.md`.
 
 **Stage B — the plain-meaning call, made on the whole of Stage A**
 
-8. **Plain meaning?** State what made it plain. If plain, go to Application.
+8. **Plain meaning?** State what made it plain. If plain, ordinarily go to Application;
+   identify any optional use of extrinsic sources solely to confirm that reading.
 9. **If ambiguous** — the two or more senses, and who reasonably holds each.
 
-**Stage C — only after ambiguity**
+**Stage C — resolve remaining ambiguity; extrinsic confirmation is a separate use**
 
-10. **Substantive canons** — lenity (grievous ambiguity only), avoidance, liberal-construction
-    directives. Not retroactivity: see `canons.md` § 3.2 and § 2.4.
-11. **Extrinsic sources** — legislative history, drafting records, LRB analyses, Council notes.
+10. **Substantive canons** — lenity (grievous ambiguity only), avoidance, and generic
+    judge-made remedial or liberal-construction maxims, subject to governing Wisconsin
+    decisions. Enacted construction directives belong in Stage A. For retroactivity,
+    follow the separate analysis in `canons.md` § 3.2 and § 2.4.
+11. **Extrinsic sources** — legislative history, drafting records, LRB analyses, Council
+    notes: use to resolve ambiguity, or identify their limited use to confirm an already
+    established plain reading. Do not use them to manufacture ambiguity.
 
 ## Lens 2 — How Each Side Argues It
 

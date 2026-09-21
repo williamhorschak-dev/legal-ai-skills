@@ -1,0 +1,22 @@
+{
+  "citation-audit": {
+    "skill": "cite-check",
+    "references": ["references/verification.md", "references/sources.md", "references/evidence-tool.md", "references/synthetic-example.md"]
+  },
+  "draft-review": {
+    "skill": "wisconsin-legal-writing",
+    "references": ["references/review.md", "references/circuit-court.md", "references/signature-blocks.md", "references/synthetic-example.md"]
+  },
+  "interpretation-lookup": {
+    "skill": "wisconsin-legal-interpretation",
+    "references": ["references/sources.md", "references/synthetic-example.md"]
+  },
+  "interpretation-analysis": {
+    "skill": "wisconsin-legal-interpretation",
+    "references": ["references/canons.md", "references/authority-hierarchy.md", "references/red-team.md", "references/synthetic-example.md"]
+  },
+  "formal-memo": {
+    "skill": "wisconsin-legal-interpretation",
+    "references": ["references/canons.md", "references/authority-hierarchy.md", "references/sources.md", "references/red-team.md", "references/memo-format.md", "assets/memo-template.md"]
+  }
+}
